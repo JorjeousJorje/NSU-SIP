@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>693</width>
+    <height>273</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_6">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLCDNumber" name="kernels_lcd"/>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>ksize</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="ksize_slider">
+         <property name="maximum">
+          <number>15</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLCDNumber" name="type_lcs"/>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Resilt image type</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="type_slider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLCDNumber" name="delta_lcd"/>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Delta</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="delta_slider">
+         <property name="maximum">
+          <number>9999</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QLCDNumber" name="dx_lcd"/>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>dx</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="dx_slider">
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLCDNumber" name="dy_lcd"/>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>dy</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="dy_slider">
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ksize_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>on_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>type_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>on_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delta_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>on_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ksize_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>kernels_lcd</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>381</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>31</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>type_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>type_lcs</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>381</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delta_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>delta_lcd</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>381</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>133</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dx_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dx_lcd</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>513</x>
+     <y>371</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>432</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dy_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dy_lcd</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>192</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dx_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>on_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>381</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dy_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>on_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>381</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_change()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TomachiWidget</class>
+ <widget class="QWidget" name="TomachiWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>524</width>
+    <height>280</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="blocksize_layout">
+     <item>
+      <widget class="QLabel" name="blocksize_label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>blocksize</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="blocksize_slider">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="maxcorners_layout">
+     <item>
+      <widget class="QLabel" name="maxcorners_label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>max corners</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="maxcorners_slider">
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="min_distance_layout">
+     <item>
+      <widget class="QLabel" name="min_distance_label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>min distance</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="min_distance_slider">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="quality_level_layout">
+     <item>
+      <widget class="QLabel" name="quality_level_label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>quality level</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="quality_level_slider">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>999</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>maxcorners_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TomachiWidget</receiver>
+   <slot>set_max_corners(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>quality_level_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TomachiWidget</receiver>
+   <slot>set_quality_level(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>min_distance_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TomachiWidget</receiver>
+   <slot>set_min_distance(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>blocksize_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TomachiWidget</receiver>
+   <slot>set_blocksize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>set_blocksize(int)</slot>
+  <slot>set_max_corners(int)</slot>
+  <slot>set_min_distance(int)</slot>
+  <slot>set_quality_level(int)</slot>
+ </slots>
+</ui>

@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FilterParameters</class>
+ <widget class="QWidget" name="FilterParameters">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>634</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="slider_name_label">
+       <property name="text">
+        <string>Kernel size</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="from_label">
+       <property name="text">
+        <string>from</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spin_from">
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="to_label">
+       <property name="text">
+        <string>to</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spin_to">
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLCDNumber" name="ksize_lcd"/>
+     </item>
+     <item>
+      <widget class="QSlider" name="ksize_slider">
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="singleStep">
+        <number>3</number>
+       </property>
+       <property name="pageStep">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+       <property name="tickInterval">
+        <number>2</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QLabel" name="slider_name_label_2">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="from_label_6">
+       <property name="text">
+        <string>from</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spin_from_2">
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="to_label_6">
+       <property name="text">
+        <string>to</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spin_to_4">
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLCDNumber" name="second_lcd"/>
+     </item>
+     <item>
+      <widget class="QSlider" name="second_parameter_slider">
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksAbove</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <widget class="QLabel" name="slider_name_label_3">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="from_label_7">
+       <property name="text">
+        <string>from</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spin_from_3">
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="to_label_7">
+       <property name="text">
+        <string>to</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spin_to_5">
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLCDNumber" name="third_lcd"/>
+     </item>
+     <item>
+      <widget class="QSlider" name="third_parameter_slider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksAbove</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ksize_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ksize_lcd</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>77</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>second_parameter_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>second_lcd</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>173</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>third_parameter_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>third_lcd</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>269</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spin_from</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FilterParameters</receiver>
+   <slot>set_min_ksize_slider()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spin_to</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FilterParameters</receiver>
+   <slot>set_max_ksize_slider()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>564</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spin_from_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FilterParameters</receiver>
+   <slot>set_min_second_slider()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spin_to_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FilterParameters</receiver>
+   <slot>set_max_second_slider()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>564</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spin_to_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FilterParameters</receiver>
+   <slot>set_max_third_slider()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>564</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spin_from_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FilterParameters</receiver>
+   <slot>set_min_third_slider()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ksize_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FilterParameters</receiver>
+   <slot>on_change(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>second_parameter_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FilterParameters</receiver>
+   <slot>on_change(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>third_parameter_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FilterParameters</receiver>
+   <slot>on_change(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>269</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>set_min_ksize_slider()</slot>
+  <slot>set_max_ksize_slider()</slot>
+  <slot>set_max_second_slider()</slot>
+  <slot>set_min_second_slider()</slot>
+  <slot>set_max_third_slider()</slot>
+  <slot>set_min_third_slider()</slot>
+  <slot>on_change()</slot>
+ </slots>
+</ui>
