@@ -1,0 +1,59 @@
+if area > tresh_area:
+                
+                epsilon = 0.02 * cv.arcLength(c, closed=True)
+                approximation = cv.approxPolyDP(c, epsilon, closed=True)
+                
+                midpoint = get_figure_midpoint(c)
+                num_of_lines = len(approximation)
+                
+                object_to_image_area = 100.0 * area / self.image_area
+                
+                shape_name = None
+                
+                if num_of_lines < 7:
+                    if num_of_lines == 4:
+                        area = cv.contourArea(c)
+                        (x, y), radius = cv.minEnclosingCircle(c)
+                        perimeter = cv.arcLength(c, closed=True)
+                        possible_square_area = 2 * (radius ** 2)
+                        
+                        if perimeter ** 2 > 16 * possible_square_area:
+                            shape_name = self.len_approx_to_figure[num_of_lines][1]
+                        else:
+                            shape_name = self.len_approx_to_figure[num_of_lines][0]
+                            
+                    else:
+                        try:
+                            shape_name = self.len_approx_to_figure[num_of_lines]
+                        except:
+                            shape_name = "Cannot predict"
+
+                else:
+                    area = cv.contourArea(c)
+                    _, radius = cv.minEnclosingCircle(c)
+                    approximate_circle_area = np.pi * (radius ** 2)
+                    
+                    if 0.9 * approximate_circle_area <= area <= 1.1 * approximate_circle_area:
+                        shape_name = "Circle"
+                    else:
+                        shape_name = "Ellipse"
+                
+                word_size = cv.getTextSize(shape_name, fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.8, thickness=2)[0]
+                word_thicness = int(cv.getTextSize(shape_name, fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.8, thickness=2)[1])
+                word_place = (midpoint[0] - word_size[0] // 2, midpoint[1] + word_size[1] // 2)
+                number_size = cv.getTextSize(str(f"{object_to_image_area:.1f}"), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.8, thickness=2)[0]
+                number_place = (word_place[0] + word_size[0] // 2 - number_size[0] // 2, word_place[1] - 3 * word_thicness)
+                cv.putText(current_image, shape_name, word_place, cv.FONT_HERSHEY_SIMPLEX, fontScale=0.8, color=(0, 0, 0), thickness=2)
+                cv.putText(current_image, str(f"{object_to_image_area:.1f}%"), number_place, cv.FONT_HERSHEY_SIMPLEX, fontScale=0.8, color=(255, 255, 255), thickness=2)
+
+def get_figure_midpoint(contour):
+            M = cv.moments(contour)
+            try:
+                cx = int(M['m10']/M['m00'])
+                cy = int(M['m01']/M['m00'])
+            except:
+                rect = cv.minAreaRect(c)
+                box = np.int0(cv.boxPoints(rect))
+                cx = box[0]
+                cy = box[2]
+            return (cx, cy)
